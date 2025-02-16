@@ -1,7 +1,7 @@
 # Projeto - Plataforma de Agendamento Odontológico
 
 ## Fase 1 - Funcionalidades Essenciais (MVP)
-[x] ### 1. Cadastro e autenticação de usuários
+### 1. Cadastro e autenticação de usuários
 - Pacientes e dentistas podem se cadastrar e fazer login.
 - Implementação de autenticação JWT.
 - Recuperação de senha via e-mail.
