@@ -1,6 +1,7 @@
 using AppointmentManager.DTOs;
 using AppointmentManager.Exceptions;
 using AppointmentManager.Services;
+using AppointmentManager.Services.Ipml;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppointmentManager.Controllers;

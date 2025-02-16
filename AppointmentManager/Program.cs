@@ -2,6 +2,7 @@ using AppointmentManager;
 using AppointmentManager.Repositories;
 using AppointmentManager.Services;
 using AppointmentManager.Services.Impl;
+using AppointmentManager.Services.Ipml;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +21,7 @@ else
 }
 
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
-builder.Services.AddScoped<IEmailService, EmailServiceImpl>();
+builder.Services.AddScoped<IEmailService, EmailServiceIpml>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

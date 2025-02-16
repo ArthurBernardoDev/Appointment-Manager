@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace AppointmentManager.Services.Impl;
 
-public class EmailServiceImpl : IEmailService
+public class EmailServiceIpml : IEmailService
 {
     private readonly SmtpSettings _smtpSettings;
-    private readonly ILogger<EmailServiceImpl> _logger;
+    private readonly ILogger<EmailServiceIpml> _logger;
 
-    public EmailServiceImpl(IOptions<SmtpSettings> smtpSettings, ILogger<EmailServiceImpl> logger)
+    public EmailServiceIpml(IOptions<SmtpSettings> smtpSettings, ILogger<EmailServiceIpml> logger)
     {
         _smtpSettings = smtpSettings.Value;
         _logger = logger;

@@ -1,3 +1,5 @@
+using AppointmentManager.Services.Ipml;
+
 namespace AppointmentManager.Tests;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
