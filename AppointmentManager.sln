@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager", "Appoi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager.Tests", "AppointmentManager.Tests\AppointmentManager.Tests.csproj", "{A57E7820-8834-4278-822A-15A09AA20326}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager.Tests.Integration", "AppointmentManager.Tests.Integration\AppointmentManager.Tests.Integration.csproj", "{BEAFC0C3-2B88-467F-930E-2692BC63732E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{A57E7820-8834-4278-822A-15A09AA20326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A57E7820-8834-4278-822A-15A09AA20326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A57E7820-8834-4278-822A-15A09AA20326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEAFC0C3-2B88-467F-930E-2692BC63732E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEAFC0C3-2B88-467F-930E-2692BC63732E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEAFC0C3-2B88-467F-930E-2692BC63732E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEAFC0C3-2B88-467F-930E-2692BC63732E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

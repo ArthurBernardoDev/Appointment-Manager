@@ -8,5 +8,8 @@
     &lt;TestId&gt;xUnit::A57E7820-8834-4278-822A-15A09AA20326::net8.0::AppointmentManager.Tests.JwtServiceTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::A57E7820-8834-4278-822A-15A09AA20326::net8.0::AppointmentManager.Tests.Integration.AuthControllerTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::A57E7820-8834-4278-822A-15A09AA20326::net8.0::AppointmentManager.Tests.Integration.HealthCheckTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.Integration.HealthCheckTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.UnitTest1&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.Integration.AuthControllerTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
