@@ -1,4 +1,3 @@
-import React from 'react';
 import './RegisterPage.css';
 
 function RegisterPage() {
