@@ -1,4 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ABCrypt_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fac2a88a1b8c442bf847475a5a257846a5a00_003F0c_003Ff02c0a55_003FBCrypt_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AIDisposable_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fa0741529c8554d199992ef9e50684668d82800_003F89_003F1b82c617_003FIDisposable_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ff85a1f6_002D401f_002D4651_002D8f9d_002D3395f62ef649/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AuthServiceTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
@@ -11,5 +12,6 @@
     &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.Integration.HealthCheckTests&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.UnitTest1&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::BEAFC0C3-2B88-467F-930E-2692BC63732E::net8.0::AppointmentManager.Tests.Integration.Integration.AuthControllerTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::A57E7820-8834-4278-822A-15A09AA20326::net8.0::AppointmentManager.Tests.Services.AuthServiceTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

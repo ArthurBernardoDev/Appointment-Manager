@@ -1,10 +1,12 @@
-using Microsoft.AspNetCore.Builder;
+using AppointmentManager;
 using AppointmentManager.Repositories;
 using AppointmentManager.Services;
+using AppointmentManager.Services.Impl;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var isTesting = builder.Environment.EnvironmentName == "Testing";
+
 builder.Services.AddControllers();
 if (isTesting)
 {
@@ -16,6 +18,9 @@ else
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 }
+
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
+builder.Services.AddScoped<IEmailService, EmailServiceImpl>();
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

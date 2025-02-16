@@ -15,7 +15,7 @@ public class JwtService
         _config = config;
     }
 
-    public string GenerateToken(User user)
+    public virtual string GenerateToken(User user)
     {
         var jwtKey = _config["Jwt:Key"];
         if (string.IsNullOrEmpty(jwtKey))
@@ -45,6 +45,22 @@ public class JwtService
         };
 
         var tokenHandler = new JwtSecurityTokenHandler();
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+        return tokenHandler.WriteToken(token);
+    }
+    
+    public virtual string GenerateResetPasswordToken(string email)
+    {
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"] ?? throw new Exception("JWT Key not configured"));
+
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Email, email) }),
+            Expires = DateTime.UtcNow.AddMinutes(30),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        };
+
         var token = tokenHandler.CreateToken(tokenDescriptor);
         return tokenHandler.WriteToken(token);
     }

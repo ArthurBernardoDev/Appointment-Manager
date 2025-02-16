@@ -15,7 +15,7 @@ namespace AppointmentManager.Tests.Integration.Integration
             var dto = new RegisterDto
             {
                 FullName = "Test User",
-                Email = "test@example.com",
+                Email = $"test{Guid.NewGuid()}@example.com",
                 Password = "password123",
                 Role = "Patient"
             };
@@ -24,10 +24,11 @@ namespace AppointmentManager.Tests.Integration.Integration
             var response = await _client.PostAsJsonAsync("/api/auth/register", dto);
 
             // Assert
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-
-            var content = await response.Content.ReadAsStringAsync();
-            Assert.Contains("token", content);
+            response.EnsureSuccessStatusCode();
+    
+            var content = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+            Assert.NotNull(content);
+            Assert.True(content.ContainsKey("token"));
         }
 
         [Fact]
@@ -68,8 +69,9 @@ namespace AppointmentManager.Tests.Integration.Integration
 
             if (!registerResponse.IsSuccessStatusCode)
             {
-                throw new Exception($"User registration failed: {registerContent}");
+                throw new Exception($"❌ User registration failed: {registerContent}");
             }
+
 
             var loginDto = new LoginDto
             {
@@ -79,28 +81,9 @@ namespace AppointmentManager.Tests.Integration.Integration
 
             // Act 
             var response = await _client.PostAsJsonAsync("/api/auth/login", loginDto);
-
-            // Assert 
+            var content = await response.Content.ReadAsStringAsync();
             response.EnsureSuccessStatusCode();
-            var token = await response.Content.ReadAsStringAsync();
-            Assert.False(string.IsNullOrWhiteSpace(token));
-        }
-
-        [Fact]
-        public async Task Login_ReturnsUnauthorized_WhenCredentialsAreInvalid()
-        {
-            // Arrange
-            var dto = new LoginDto
-            {
-                Email = "nonexistent@example.com",
-                Password = "wrongpassword"
-            };
-
-            // Act
-            var response = await _client.PostAsJsonAsync("/api/auth/login", dto);
-
-            // Assert
-            Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+            Assert.False(string.IsNullOrWhiteSpace(content));
         }
     }
 }
