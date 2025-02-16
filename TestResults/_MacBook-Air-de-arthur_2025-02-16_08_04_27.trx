@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4e437b45-dde7-4616-9a08-504f9e3cb7cb" name="@MacBook-Air-de-arthur 2025-02-16 08:04:27" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-02-16T08:04:27.9675200-03:00" queuing="2025-02-16T08:04:27.9675200-03:00" start="2025-02-16T08:04:27.2669870-03:00" finish="2025-02-16T08:04:27.9757260-03:00" />
+  <TestSettings name="default" id="40f97913-e856-46fe-8662-ca7aeb19a178">
+    <Deployment runDeploymentRoot="_MacBook-Air-de-arthur_2025-02-16_08_04_27" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6063290f-5425-4dc9-aea4-165a32e15983" testId="515012ff-bf4d-287c-6c88-e719f22d9943" testName="AppointmentManager.Tests.JwtServiceTests.GenerateToken_ThrowsException_WhenKeyIsMissing" computerName="MacBook-Air-de-arthur" duration="00:00:00.0006888" startTime="2025-02-16T08:04:27.8540340-03:00" endTime="2025-02-16T08:04:27.8540350-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6063290f-5425-4dc9-aea4-165a32e15983" />
+    <UnitTestResult executionId="13ca8259-1c9f-4afd-aa92-321daced389b" testId="019d832c-2fc8-a65f-485f-fc18c5fa31ce" testName="AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsBadRequest_WhenUserAlreadyExists" computerName="MacBook-Air-de-arthur" duration="00:00:00.0010000" startTime="2025-02-16T08:04:27.8267570-03:00" endTime="2025-02-16T08:04:27.8267570-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13ca8259-1c9f-4afd-aa92-321daced389b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.</Message>
+          <StackTrace>   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor() in /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs:line 36
+   at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="685730a5-ce60-4f9a-9fde-50556e9759d4" testId="b781cc7a-90fc-3517-cc6f-627687238b58" testName="AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsToken_WhenCredentialsAreValid" computerName="MacBook-Air-de-arthur" duration="00:00:00.0010000" startTime="2025-02-16T08:04:27.8276290-03:00" endTime="2025-02-16T08:04:27.8276290-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="685730a5-ce60-4f9a-9fde-50556e9759d4">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.</Message>
+          <StackTrace>   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor() in /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs:line 36
+   at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0b9df3d0-93fc-4f3a-ab2d-088d827ca91b" testId="37cda1e6-97b4-8992-e2ac-0b35be8cc911" testName="AppointmentManager.Tests.JwtServiceTests.GenerateToken_ReturnsValidToken" computerName="MacBook-Air-de-arthur" duration="00:00:00.0506019" startTime="2025-02-16T08:04:27.8536470-03:00" endTime="2025-02-16T08:04:27.8536470-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b9df3d0-93fc-4f3a-ab2d-088d827ca91b" />
+    <UnitTestResult executionId="b33ca661-5f05-4184-9007-ce2649506fbd" testId="153c92d1-4926-6296-87f9-ee340e67898c" testName="AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsToken_WhenUserIsRegisteredSuccessfully" computerName="MacBook-Air-de-arthur" duration="00:00:00.0010000" startTime="2025-02-16T08:04:27.8238240-03:00" endTime="2025-02-16T08:04:27.8238410-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b33ca661-5f05-4184-9007-ce2649506fbd">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.</Message>
+          <StackTrace>   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor() in /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs:line 36
+   at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="64191ccf-5b1f-4db1-959a-88c8be844280" testId="6f123775-bcaa-e651-5bf7-7c0423cdcda4" testName="AuthServiceTests.Register_ThrowsException_WhenUserAlreadyExists" computerName="MacBook-Air-de-arthur" duration="00:00:00.0665676" startTime="2025-02-16T08:04:27.8664760-03:00" endTime="2025-02-16T08:04:27.8664760-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64191ccf-5b1f-4db1-959a-88c8be844280" />
+    <UnitTestResult executionId="2a4a8cde-be4a-4cd7-9588-76bd8bcc7621" testId="6bc920fb-1fc4-4a71-e41f-9f81e5fbf8d8" testName="AuthServiceTests.Login_ThrowsException_WhenCredentialsAreInvalid" computerName="MacBook-Air-de-arthur" duration="00:00:00.0022621" startTime="2025-02-16T08:04:27.8687780-03:00" endTime="2025-02-16T08:04:27.8687780-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a4a8cde-be4a-4cd7-9588-76bd8bcc7621" />
+    <UnitTestResult executionId="03910133-1d96-48c5-96db-36a228bdb804" testId="92e202d4-bac7-b9fc-5d04-979df6bcde39" testName="AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsUnauthorized_WhenCredentialsAreInvalid" computerName="MacBook-Air-de-arthur" duration="00:00:00.0010000" startTime="2025-02-16T08:04:27.8272950-03:00" endTime="2025-02-16T08:04:27.8272950-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03910133-1d96-48c5-96db-36a228bdb804">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.</Message>
+          <StackTrace>   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor() in /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs:line 36
+   at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="AuthServiceTests.Register_ThrowsException_WhenUserAlreadyExists" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="6f123775-bcaa-e651-5bf7-7c0423cdcda4">
+      <Execution id="64191ccf-5b1f-4db1-959a-88c8be844280" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AuthServiceTests" name="Register_ThrowsException_WhenUserAlreadyExists" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsBadRequest_WhenUserAlreadyExists" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="019d832c-2fc8-a65f-485f-fc18c5fa31ce">
+      <Execution id="13ca8259-1c9f-4afd-aa92-321daced389b" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.Integration.AuthControllerTests" name="Register_ReturnsBadRequest_WhenUserAlreadyExists" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.JwtServiceTests.GenerateToken_ReturnsValidToken" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="37cda1e6-97b4-8992-e2ac-0b35be8cc911">
+      <Execution id="0b9df3d0-93fc-4f3a-ab2d-088d827ca91b" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.JwtServiceTests" name="GenerateToken_ReturnsValidToken" />
+    </UnitTest>
+    <UnitTest name="AuthServiceTests.Login_ThrowsException_WhenCredentialsAreInvalid" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="6bc920fb-1fc4-4a71-e41f-9f81e5fbf8d8">
+      <Execution id="2a4a8cde-be4a-4cd7-9588-76bd8bcc7621" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AuthServiceTests" name="Login_ThrowsException_WhenCredentialsAreInvalid" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsToken_WhenCredentialsAreValid" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="b781cc7a-90fc-3517-cc6f-627687238b58">
+      <Execution id="685730a5-ce60-4f9a-9fde-50556e9759d4" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.Integration.AuthControllerTests" name="Login_ReturnsToken_WhenCredentialsAreValid" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsToken_WhenUserIsRegisteredSuccessfully" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="153c92d1-4926-6296-87f9-ee340e67898c">
+      <Execution id="b33ca661-5f05-4184-9007-ce2649506fbd" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.Integration.AuthControllerTests" name="Register_ReturnsToken_WhenUserIsRegisteredSuccessfully" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsUnauthorized_WhenCredentialsAreInvalid" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="92e202d4-bac7-b9fc-5d04-979df6bcde39">
+      <Execution id="03910133-1d96-48c5-96db-36a228bdb804" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.Integration.AuthControllerTests" name="Login_ReturnsUnauthorized_WhenCredentialsAreInvalid" />
+    </UnitTest>
+    <UnitTest name="AppointmentManager.Tests.JwtServiceTests.GenerateToken_ThrowsException_WhenKeyIsMissing" storage="/users/arthurbernardo/riderprojects/appointmentmanager/appointmentmanager.tests/bin/debug/net8.0/appointmentmanager.tests.dll" id="515012ff-bf4d-287c-6c88-e719f22d9943">
+      <Execution id="6063290f-5425-4dc9-aea4-165a32e15983" />
+      <TestMethod codeBase="/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/AppointmentManager.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="AppointmentManager.Tests.JwtServiceTests" name="GenerateToken_ThrowsException_WhenKeyIsMissing" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="515012ff-bf4d-287c-6c88-e719f22d9943" executionId="6063290f-5425-4dc9-aea4-165a32e15983" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="019d832c-2fc8-a65f-485f-fc18c5fa31ce" executionId="13ca8259-1c9f-4afd-aa92-321daced389b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b781cc7a-90fc-3517-cc6f-627687238b58" executionId="685730a5-ce60-4f9a-9fde-50556e9759d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37cda1e6-97b4-8992-e2ac-0b35be8cc911" executionId="0b9df3d0-93fc-4f3a-ab2d-088d827ca91b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="153c92d1-4926-6296-87f9-ee340e67898c" executionId="b33ca661-5f05-4184-9007-ce2649506fbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6f123775-bcaa-e651-5bf7-7c0423cdcda4" executionId="64191ccf-5b1f-4db1-959a-88c8be844280" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6bc920fb-1fc4-4a71-e41f-9f81e5fbf8d8" executionId="2a4a8cde-be4a-4cd7-9588-76bd8bcc7621" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92e202d4-bac7-b9fc-5d04-979df6bcde39" executionId="03910133-1d96-48c5-96db-36a228bdb804" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados que não estão em uma lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos os resultados carregados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="4" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.8)
+[xUnit.net 00:00:00.06]   Discovering: AppointmentManager.Tests
+[xUnit.net 00:00:00.09]   Discovered:  AppointmentManager.Tests
+[xUnit.net 00:00:00.09]   Starting:    AppointmentManager.Tests
+[xUnit.net 00:00:00.14]       System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.
+[xUnit.net 00:00:00.14]       Stack Trace:
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:00.14]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:00.14]         /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs(36,0): at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor()
+[xUnit.net 00:00:00.14]            at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+[xUnit.net 00:00:00.14]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.15]       System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.
+[xUnit.net 00:00:00.15]       Stack Trace:
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:00.15]         /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs(36,0): at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor()
+[xUnit.net 00:00:00.15]            at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+[xUnit.net 00:00:00.15]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.15]       System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.
+[xUnit.net 00:00:00.15]       Stack Trace:
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:00.15]         /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs(36,0): at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor()
+[xUnit.net 00:00:00.15]            at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+[xUnit.net 00:00:00.15]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.15]       System.InvalidOperationException : Can't find '/Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/bin/Debug/net8.0/testhost.deps.json'. This file is required for functional tests to run properly. There should be a copy of the file on your source project bin folder. If that is not the case, make sure that the property PreserveCompilationContext is set to true on your project file. E.g '&lt;PreserveCompilationContext&gt;true&lt;/PreserveCompilationContext&gt;'. For functional tests to work they need to either run from the build output folder or the testhost.deps.json file from your application's output directory must be copied to the folder where the tests are running on. A common cause for this error is having shadow copying enabled when the tests run.
+[xUnit.net 00:00:00.15]       Stack Trace:
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureDepsFile()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:00.15]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:00.15]         /Users/arthurbernardo/RiderProjects/AppointmentManager/AppointmentManager.Tests/Integration/IntegrationTestBase.cs(36,0): at AppointmentManager.Tests.Integration.IntegrationTestBase..ctor()
+[xUnit.net 00:00:00.15]            at AppointmentManager.Tests.Integration.AuthControllerTests..ctor()
+[xUnit.net 00:00:00.15]            at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean wrapExceptions)
+[xUnit.net 00:00:00.19]   Finished:    AppointmentManager.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="MacBook-Air-de-arthur" outcome="Error" timestamp="2025-02-16T08:04:27.8221250-03:00">
+        <Text>[xUnit.net 00:00:00.14]     AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsToken_WhenUserIsRegisteredSuccessfully [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBook-Air-de-arthur" outcome="Error" timestamp="2025-02-16T08:04:27.8265480-03:00">
+        <Text>[xUnit.net 00:00:00.15]     AppointmentManager.Tests.Integration.AuthControllerTests.Register_ReturnsBadRequest_WhenUserAlreadyExists [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBook-Air-de-arthur" outcome="Error" timestamp="2025-02-16T08:04:27.8271440-03:00">
+        <Text>[xUnit.net 00:00:00.15]     AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsUnauthorized_WhenCredentialsAreInvalid [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="MacBook-Air-de-arthur" outcome="Error" timestamp="2025-02-16T08:04:27.8274910-03:00">
+        <Text>[xUnit.net 00:00:00.15]     AppointmentManager.Tests.Integration.AuthControllerTests.Login_ReturnsToken_WhenCredentialsAreValid [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

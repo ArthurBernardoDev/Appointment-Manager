@@ -1,0 +1,28 @@
+# Pastas de build e resultados
+bin/
+obj/
+artifacts/
+
+# Arquivos temporários do Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.cache
+*.sln.docstates
+
+# Arquivos do Rider
+.idea/
+*.sln.iml
+
+# Arquivos gerados pelo .NET Core/SDK
+project.lock.json
+project.fragment.lock.json
+*.deps.json
+
+# Logs e arquivos de saída
+*.log
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
