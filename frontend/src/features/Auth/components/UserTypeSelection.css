@@ -1,0 +1,50 @@
+.user-selection {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  height: 73vh;
+}
+
+.user-selection h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.user-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.user-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 280px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+}
+
+.user-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.user-card h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.user-card p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}

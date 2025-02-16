@@ -1,0 +1,159 @@
+/* Container principal */
+.signup-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo e títulos */
+.logo {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 24px;
+  color: #3fa37f; /* cor aproximada da Doctoralia */
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Botões de login social */
+.social-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+}
+
+.google-button {
+  background-color: #4285f4; /* Azul Google */
+}
+
+.apple-button {
+  background-color: #000; /* Preto Apple */
+}
+
+/* Separador com 'ou' no meio */
+.separator {
+  text-align: center;
+  margin: 15px 0;
+  position: relative;
+}
+
+.separator span {
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Grupo de rádios */
+.radio-group {
+  margin-top: 15px;
+}
+
+.radio-group span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.radio-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+/* Grupo de checkboxes */
+.checkbox-group {
+  margin-top: 15px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+/* Botão de criar conta */
+.create-button {
+  margin-top: 20px;
+  background-color: #3fa37f;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #2e825f;
+}
+
+/* Textos de rodapé */
+.terms,
+.login-redirect {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.terms a,
+.login-redirect a {
+  color: #3fa37f;
+  text-decoration: none;
+}
+
+.terms a:hover,
+.login-redirect a:hover {
+  text-decoration: underline;
+}

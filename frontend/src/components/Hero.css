@@ -1,0 +1,134 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Seção principal */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background-color: #f9fafc;
+  height: 73vh;
+}
+
+/* Texto */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #222;
+}
+
+.hero-text .highlight {
+  color: #007bff;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Botões */
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #007bff;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Imagens */
+.hero-images {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  left: 50%;
+  top: -150px;
+  transform: translateX(-50%);
+  width: 50px;
+}
+
+.doctor-patient {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.doctor-image,
+.patient-image {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.doctor-image {
+  background-color: white;
+  padding: 10px;
+}
+
+.patient-image {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn.primary {
+  background-color: #3366ff;
+  color: white;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: #3366ff;
+  border: 2px solid #3366ff;
+}
