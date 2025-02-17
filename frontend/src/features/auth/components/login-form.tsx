@@ -1,5 +1,5 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
-import "./RegisterForm.css";
+import "./register-form.css";
 import { LoginFormData } from "../pages/sign-in";
 
 type LoginFormProps = {
