@@ -2,6 +2,7 @@ using AppointmentManager.DTOs;
 using AppointmentManager.Exceptions;
 using AppointmentManager.Services;
 using AppointmentManager.Services.Ipml;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppointmentManager.Controllers;
@@ -41,7 +42,7 @@ public class AuthController : ControllerBase
         try
         {
             var token = await _authService.Login(dto);
-            return Ok(token);
+            return Ok(new { token });
         }
         catch (InvalidCredentialsException)
         {
@@ -69,5 +70,11 @@ public class AuthController : ControllerBase
             return BadRequest(new { message = "Invalid or expired token." });
         }
         return Ok(new { message = "Password successfully reset." });
+    }
+    [HttpGet("validate-token")]
+    [Authorize]
+    public IActionResult ValidateToken()
+    {
+        return Ok(new { message = "Token válido" });
     }
 }

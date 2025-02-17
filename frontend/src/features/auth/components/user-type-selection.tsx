@@ -1,4 +1,4 @@
-import "./UserTypeSelection.css";
+import "./user-type-selection.css";
 
 type UserTypeSelectionType = {
   setUserRole: (role: string) => void;
