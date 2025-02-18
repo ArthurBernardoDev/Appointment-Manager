@@ -53,7 +53,7 @@ public class AuthService : IAuthService
         var user = await _userRepository.GetByEmail(dto.Email);
         if (user == null)
         {
-            _logger.LogWarning("❌ User not found!");
+            _logger.LogWarning("User not found!");
             return null;
         }
 
@@ -62,11 +62,11 @@ public class AuthService : IAuthService
 
         if (!VerifyPassword(dto.Password, user.PasswordHash))
         {
-            _logger.LogWarning("❌ Password does not match!");
+            _logger.LogWarning("Password does not match!");
             return null;
         }
 
-        _logger.LogInformation("✅ Password matches! Generating token...");
+        _logger.LogInformation("Password matches! Generating token...");
         return _jwtService.GenerateToken(user);
     }
 
@@ -86,7 +86,7 @@ public class AuthService : IAuthService
         if (user == null) return false;
 
         var resetToken = _jwtService.GenerateResetPasswordToken(email);
-        var resetLink = $"https://seusite.com/reset-password?token={resetToken}";
+        var resetLink = $"http://localhost:5173/reset-password?token={resetToken}";
 
         await _emailService.SendPasswordResetEmail(email, resetLink);
         return true;
@@ -112,14 +112,14 @@ public class AuthService : IAuthService
 
             Console.WriteLine("🔹 Validating token...");
             var principal = tokenHandler.ValidateToken(token, parameters, out SecurityToken validatedToken);
-            Console.WriteLine($"✅ Token validated: {validatedToken}");
+            Console.WriteLine($"Token validated: {validatedToken}");
 
             var email = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             Console.WriteLine($"🔹 Extracted email from token: {email}");
 
             if (email == null)
             {
-                Console.WriteLine("❌ Email not found in token!");
+                Console.WriteLine("Email not found in token!");
                 return false;
             }
 
@@ -127,20 +127,20 @@ public class AuthService : IAuthService
             var user = await _userRepository.GetByEmail(email);
             if (user == null)
             {
-                Console.WriteLine("❌ User not found!");
+                Console.WriteLine("User not found!");
                 return false;
             }
 
-            Console.WriteLine("✅ User found! Updating password...");
+            Console.WriteLine("User found! Updating password...");
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
             await _userRepository.Update(user);
 
-            Console.WriteLine("✅ Password updated successfully!");
+            Console.WriteLine("Password updated successfully!");
             return true;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"❌ Exception occurred: {ex.Message}");
+            Console.WriteLine($"Exception occurred: {ex.Message}");
             return false;
         }
     }

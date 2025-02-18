@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "../../../api/sign-in";
+import { signIn } from "../../../api/auth/sign-in";
 import LoginForm from "../components/login-form";
 
 const loginSchema = z.object({

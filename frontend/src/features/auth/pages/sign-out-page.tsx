@@ -2,7 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { signOut } from "../../../api/sign-out";
+import { signOut } from "../../../api/auth/sign-out";
 import Cookies from "js-cookie"
 import { useNavigate } from "react-router-dom";
 import UserTypeSelection from "../components/user-type-selection";
@@ -23,6 +23,7 @@ const Register = () => {
     handleSubmit,
     setValue,
     watch,
+    getValues,
     formState: { errors },
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
@@ -48,6 +49,7 @@ const Register = () => {
   const onSubmit: SubmitHandler<RegisterFormData> = (data) => {
     registerMutation.mutate(data);
   };
+  console.log(getValues("role"))
 
   return (
     <div>

@@ -20,6 +20,14 @@ public class EmailServiceIpml : IEmailService
     {
         try
         {
+            if (string.IsNullOrWhiteSpace(toEmail))
+            {
+                _logger.LogError("O e-mail para redefinição de senha está vazio!");
+                throw new ArgumentException("O endereço de e-mail não pode ser vazio.", nameof(toEmail));
+            }
+
+            _logger.LogInformation($"Tentando enviar um e-mail de redefinição para: {toEmail}");
+
             using var smtpClient = new SmtpClient(_smtpSettings.Host, _smtpSettings.Port);
             smtpClient.Credentials = new NetworkCredential(_smtpSettings.User, _smtpSettings.Pass);
             smtpClient.EnableSsl = true;
@@ -32,14 +40,19 @@ public class EmailServiceIpml : IEmailService
                 IsBodyHtml = true
             };
 
-            mailMessage.To.Add(toEmail);
+            mailMessage.To.Add(toEmail); 
 
             await smtpClient.SendMailAsync(mailMessage);
-            _logger.LogInformation($"Password reset email sent to {toEmail}");
+            _logger.LogInformation($"E-mail de redefinição de senha enviado para {toEmail}");
+        }
+        catch (ArgumentException ex)
+        {
+            _logger.LogError($" Erro de argumento: {ex.Message}");
+            throw;
         }
         catch (Exception ex)
         {
-            _logger.LogError($"Failed to send password reset email to {toEmail}: {ex.Message}");
+            _logger.LogError($"Falha ao enviar o e-mail de redefinição de senha para {toEmail}: {ex.Message}");
             throw;
         }
     }

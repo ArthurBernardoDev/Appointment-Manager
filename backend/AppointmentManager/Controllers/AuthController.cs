@@ -53,12 +53,19 @@ public class AuthController : ControllerBase
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDto dto)
     {
+        if (string.IsNullOrWhiteSpace(dto.Email))
+        {
+            return BadRequest("O e-mail é obrigatório.");
+        }
+
         var result = await _authService.ForgotPassword(dto.Email);
+
         if (!result)
         {
-            return BadRequest(new { message = "Email not found." });
+            return NotFound("Usuário não encontrado.");
         }
-        return Ok(new { message = "Password reset link sent." });
+
+        return Ok(new { message = "Se o e-mail estiver cadastrado, um link de recuperação foi enviado." });
     }
     
     [HttpPost("reset-password")]
