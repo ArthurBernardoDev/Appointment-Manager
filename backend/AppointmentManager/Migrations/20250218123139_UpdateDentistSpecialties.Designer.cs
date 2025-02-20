@@ -3,6 +3,7 @@ using AppointmentManager.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppointmentManager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250218123139_UpdateDentistSpecialties")]
+    partial class UpdateDentistSpecialties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,33 +85,6 @@ namespace AppointmentManager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Specialties");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Ortodontia"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Endodontia"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Periodontia"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Implantodontia"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Dentística"
-                        });
                 });
 
             modelBuilder.Entity("AppointmentManager.Models.User", b =>

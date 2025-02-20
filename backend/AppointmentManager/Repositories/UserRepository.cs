@@ -1,3 +1,4 @@
+using AppointmentManager.Data;
 using AppointmentManager.Models;
 using Microsoft.EntityFrameworkCore;
 

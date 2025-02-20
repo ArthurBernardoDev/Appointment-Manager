@@ -1,6 +1,7 @@
 using AppointmentManager.DTOs;
 using AppointmentManager.Exceptions;
 using AppointmentManager.Models;
+using AppointmentManager.Repositories;
 using AppointmentManager.Services;
 using AppointmentManager.Services.Ipml;
 using Microsoft.Extensions.Configuration;

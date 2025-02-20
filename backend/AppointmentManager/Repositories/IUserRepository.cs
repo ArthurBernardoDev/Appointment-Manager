@@ -1,5 +1,7 @@
 using AppointmentManager.Models;
 
+namespace AppointmentManager.Repositories;
+
 public interface IUserRepository
 {
     Task<bool> EmailExists(string email);
