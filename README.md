@@ -2,9 +2,9 @@
 
 ## Fase 1 - Funcionalidades Essenciais (MVP)
 ### 1. Cadastro e autenticação de usuários
-- Pacientes e dentistas podem se cadastrar e fazer login.
-- Implementação de autenticação JWT.
-- Recuperação de senha via e-mail.
+- [x] Pacientes e dentistas podem se cadastrar e fazer login.
+- [x] Implementação de autenticação JWT.
+- [x] Recuperação de senha via e-mail.
 
 ### 2. Perfis de dentistas
 - Criação e edição de perfil com foto, especialidades, endereço da clínica e descrição.
