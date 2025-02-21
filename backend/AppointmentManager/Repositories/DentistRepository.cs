@@ -30,6 +30,14 @@ public class DentistRepository
         await _context.SaveChangesAsync();
         return dentist;
     }
+    
+    
+    public async Task<Dentist?> GetDentistByUserId(int userId)
+    {
+        return await _context.Dentists
+            .Include(d => d.DentistSpecialties)
+            .FirstOrDefaultAsync(d => d.UserId == userId);
+    }
 
     public async Task<List<Specialty>> GetSpecialties()
     {

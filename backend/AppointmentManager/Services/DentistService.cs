@@ -28,10 +28,16 @@ namespace AppointmentManager.Services
                 Photo = fileUrl,
                 ClinicAddress = dentistDto.ClinicAddress,
                 Description = dentistDto.Description,
-                UserId = userId
+                UserId = userId,
+                IsProfileComplete = true
             };
 
             return await _dentistRepository.AddDentist(dentist, dentistDto.SpecialtyIds);
+        }
+        public async Task<bool> IsProfileComplete(int userId)
+        {
+            var dentist = await _dentistRepository.GetDentistByUserId(userId);
+            return dentist != null && dentist.IsProfileComplete;
         }
     }
 }

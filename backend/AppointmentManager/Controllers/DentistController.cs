@@ -39,5 +39,19 @@ namespace AppointmentManager.Controllers
 
             return Ok("✅ Dentista registrado com sucesso!");
         }
-    }
+
+        [HttpGet("check-profile")]
+        [Authorize(Policy = "DentistOnly")]
+        public async Task<IActionResult> CheckProfileCompletion()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("Usuário não autenticado.");
+
+            var userId = int.Parse(userIdClaim.Value);
+            var isProfileComplete = await _dentistService.IsProfileComplete(userId);
+
+            return Ok(new { isProfileComplete });
+        }
+  }   
 }
