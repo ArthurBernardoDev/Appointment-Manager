@@ -7,6 +7,7 @@ import Register from "./features/auth/pages/sign-out-page";
 import Login from "./features/auth/pages/sign-in-page";
 import ForgotPasswordPage from "./features/auth/pages/forgot-password-page";
 import ResetPasswordPage from "./features/auth/pages/reset-password-page";
+import DentistProfilePage from "./features/auth/pages/dentist-profile-form";
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
       },
       { path: "/forgot-password", element: <ForgotPasswordPage /> },
       { path: "/reset-password", element: <ResetPasswordPage /> },
-
+      { path: "/dentist-complete", element: <DentistProfilePage /> },
     ],
   },
   {

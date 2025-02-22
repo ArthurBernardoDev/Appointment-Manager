@@ -13,6 +13,11 @@
 .content-height {
   height: 70vh;
 }
+.error {
+  padding-top: 4px;
+  font-size: 16px;
+  color: red;
+}
 
 /* Logo e títulos */
 .logo {
