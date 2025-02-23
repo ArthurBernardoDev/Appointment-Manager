@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { LoginFormData, loginSchema } from "./sign-in.schema";
 import { toast } from "sonner";
-import { ISignInService } from "../../../../services/SignInService";
+import { ISignInService } from "../../../../services/sign-in-service";
 
 type SignInModelProps = {
   signInService: ISignInService

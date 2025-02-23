@@ -2,7 +2,7 @@ import { describe, expect, test, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import { useSignInModel } from './sign-in.model';
 import SignInFormView from './sign-in-form.view';
-import { ISignInService } from '../../../../services/SignInService';
+import { ISignInService } from '../../../../services/sign-in-service';
 import { renderView } from '../../../../lib/renderView';
 import { act, fireEvent, waitFor } from '@testing-library/react';
 import { toast } from 'sonner';

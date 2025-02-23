@@ -1,4 +1,4 @@
-import { SignInService } from "../../../../services/SignInService";
+import { SignInService } from "../../../../services/sign-in-service";
 import SignInFormView from "./sign-in-form.view";
 import { useSignInModel } from "./sign-in.model";
 
