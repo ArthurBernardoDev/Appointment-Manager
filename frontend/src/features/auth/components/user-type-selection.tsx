@@ -9,7 +9,7 @@ const UserTypeSelection = ({ setUserRole }: UserTypeSelectionType) => {
     <section className="user-selection">
       <h2>Crie uma conta gratuita</h2>
       <div className="user-options">
-        <div className="user-card" onClick={() => setUserRole("Patient")}>
+        <div className="user-card" onClick={() => setUserRole("Patient")} data-testid="user-card-patient">
           <div className="user-icon">🦷</div>
           <h3>Sou um paciente</h3>
           <p>Agende consultas e encontre os melhores profissionais perto de você.</p>

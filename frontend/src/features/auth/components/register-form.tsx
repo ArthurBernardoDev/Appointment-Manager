@@ -19,10 +19,11 @@ function RegisterForm({ register, errors, onSubmit }: RegisterFormProps) {
           id="fullName"
           type="text"
           placeholder="Seu nome e sobrenome"
+          data-testid="input-full-name"
           {...register("fullName")}
         />
         {errors.fullName && (
-          <p className="error">{errors.fullName.message}</p>
+          <p className="error" data-testid="error-message">{errors.fullName.message}</p>
         )}
 
         <label htmlFor="email">Seu e-mail</label>
@@ -30,22 +31,24 @@ function RegisterForm({ register, errors, onSubmit }: RegisterFormProps) {
           id="email"
           type="email"
           placeholder="Seu e-mail"
+          data-testid="input-email"
           {...register("email")}
         />
-        {errors.email && <p className="error">{errors.email.message}</p>}
+        {errors.email && <p className="error" data-testid="error-message">{errors.email.message}</p>}
 
         <label htmlFor="password">Sua senha</label>
         <input
           id="password"
           type="password"
           placeholder="Sua senha"
+          data-testid="input-password"
           {...register("password")}
         />
         {errors.password && (
-          <p className="error">{errors.password.message}</p>
+          <p className="error" data-testid="error-message">{errors.password.message}</p>
         )}
 
-        <button type="submit" className="create-button">
+        <button type="submit" className="create-button" data-testid="button-submit">
           Criar perfil gratuito
         </button>
       </form>
