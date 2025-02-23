@@ -7,13 +7,23 @@ import { renderView } from '../../../../lib/renderView';
 import { act, fireEvent, waitFor } from '@testing-library/react';
 import { toast } from 'sonner';
 import { renderHookWithProviders } from '../../../../lib/renderHooks';
-
+import Cookies from "js-cookie";
 vi.mock("sonner", () => ({
   toast: {
     error: vi.fn(),
   },
 }));
 
+vi.mock("js-cookie", async () => {
+  const actual = await vi.importActual<typeof import("js-cookie")>("js-cookie");
+  return {
+    ...actual,
+    default: {
+      set: vi.fn(),
+      get: vi.fn(),
+    },
+  };
+});
 
 const MockSucessSignIn: ISignInService = {
   exec: function () {
@@ -88,5 +98,26 @@ describe("Sign in page", () => {
     });
   
     expect(mockExec).toHaveBeenCalledWith({ email: "user@example.com", password: "password123" });
+  });
+
+  test("should store token in cookies on successful login", async () => {
+    const mockExec = vi.fn(() => Promise.resolve({ token: "fake-token" }));
+    const signInService: ISignInService = { exec: mockExec };
+  
+    const { result } = renderHookWithProviders(useSignInModel, {
+      initialProps: { signInService },
+    });
+  
+    await act(async () => {
+      result.current.onSubmit({ email: "user@example.com", password: "password123" });
+    });
+  
+    expect(Cookies.set).toHaveBeenCalledWith("token", "fake-token", {
+      expires: 1,
+      secure: true,
+      sameSite: "Strict",
+    });
+    (Cookies.get as ReturnType<typeof vi.fn>).mockReturnValue("fake-token");
+    expect(Cookies.get("token")).toBe("fake-token");
   });
 });
