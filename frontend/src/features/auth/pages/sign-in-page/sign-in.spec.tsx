@@ -1,24 +1,39 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest';
 import '@testing-library/jest-dom';
-import { useSignInModel } from './sign-in.model'
+import { useSignInModel } from './sign-in.model';
 import SignInFormView from './sign-in-form.view';
 import { ISignInService } from '../../../../services/SignInService';
 import { renderView } from '../../../../lib/renderView';
 import { fireEvent, waitFor } from '@testing-library/react';
+import { toast } from 'sonner';
+
+vi.mock("sonner", () => ({
+  toast: {
+    error: vi.fn(),
+  },
+}));
+
 
 const MockSucessSignIn: ISignInService = {
   exec: function () {
-    throw new Promise(resolve => resolve("success"));
+    return new Promise(resolve => resolve({ token: "fake-token" }));
   }
-}
-const MakeSut = () => {
-  const methods = useSignInModel({ signInService: MockSucessSignIn });
+};
+
+const MockFailedSignIn: ISignInService = {
+  exec: function () {
+    return new Promise((_, reject) => reject(new Error("Login falhou")));
+  }
+};
+
+const MakeSut = ({ signInService }: { signInService: ISignInService }) => {
+  const methods = useSignInModel({ signInService });
   return <SignInFormView {...methods} />;
 };
 
 describe("Sign in page", () => {
   test("should display error messages when form is submitted empty", async () => {
-    const screen = renderView(<MakeSut />);
+    const screen = renderView(<MakeSut signInService={MockSucessSignIn} />);
     
     const buttonSubmit = screen.getByTestId("button-submit");
     fireEvent.click(buttonSubmit);
@@ -29,7 +44,7 @@ describe("Sign in page", () => {
   });
 
   test("should display no error messages on form submission", async () => {
-    const screen = renderView(<MakeSut />);
+    const screen = renderView(<MakeSut signInService={MockSucessSignIn} />);
   
     const inputEmail = screen.getByTestId("input-email");
     fireEvent.input(inputEmail, { target: { value: "testteste@gmail.com" } });
@@ -44,4 +59,21 @@ describe("Sign in page", () => {
       expect(screen.queryAllByTestId("error-message")).toHaveLength(0);
     });
   });
-})
+
+  test("should show error message when login fails", async () => {
+    const screen = renderView(<MakeSut signInService={MockFailedSignIn} />);
+
+    const inputEmail = screen.getByTestId("input-email");
+    fireEvent.input(inputEmail, { target: { value: "user@example.com" } });
+
+    const inputPassword = screen.getByTestId("input-password");
+    fireEvent.input(inputPassword, { target: { value: "wrongpassword" } });
+
+    const buttonSubmit = screen.getByTestId("button-submit");
+    fireEvent.click(buttonSubmit);
+
+    await waitFor(() => {
+      expect(toast.error).toHaveBeenCalledWith("Erro ao efetuar login. Tente novamente.");
+    });
+  });
+});
