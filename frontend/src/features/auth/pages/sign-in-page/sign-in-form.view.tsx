@@ -1,21 +1,17 @@
-import { FieldErrors, UseFormRegister } from "react-hook-form";
-import "./register-form.css";
-import { LoginFormData } from "../pages/sign-in-page";
+import "../../register-form.css";
 import { Link } from "react-router-dom";
+import { useSignInModel } from "./sign-in.model";
 
-type LoginFormProps = {
-  register: UseFormRegister<LoginFormData>;
-  errors: FieldErrors<LoginFormData>;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-};
+type SignInFormViewProps = ReturnType<typeof useSignInModel>
 
-function LoginForm({ register, errors, onSubmit }: LoginFormProps) {
+function SignInFormView(props: SignInFormViewProps) {
+  const {handleSubmit, onSubmit, register, errors} = props;
   return (
     <div className="content-height">
       <div className="signup-container">
         <h1 className="logo">Sorriso+</h1>
         <h2>Entre com sua conta</h2>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email">Seu e-mail</label>
           <input
             id="email"
@@ -36,7 +32,7 @@ function LoginForm({ register, errors, onSubmit }: LoginFormProps) {
             <p className="error">{errors.password.message}</p>
           )}
 
-          <button type="submit" className="create-button">
+          <button type="submit" data-testid="button-submit" className="create-button">
             Entrar
           </button>
           <p className="login-redirect">
@@ -48,4 +44,4 @@ function LoginForm({ register, errors, onSubmit }: LoginFormProps) {
   );
 }
 
-export default LoginForm;
+export default SignInFormView;

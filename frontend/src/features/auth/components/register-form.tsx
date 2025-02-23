@@ -1,5 +1,5 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
-import "./register-form.css";
+import "../register-form.css";
 import { RegisterFormData } from "../pages/sign-out-page";
 
 type RegisterFormProps = {

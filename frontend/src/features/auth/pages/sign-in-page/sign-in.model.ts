@@ -1,20 +1,17 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "../../../api/auth/sign-in";
-import LoginForm from "../components/login-form";
+import { LoginFormData, loginSchema } from "./sign-in.schema";
+import { toast } from "sonner";
+import { ISignInService } from "../../../../services/SignInService";
 
-const loginSchema = z.object({
-  email: z.string().email("E-mail inválido"),
-  password: z.string().min(8, "A senha precisa ter no mínimo 8 caracteres"),
-});
+type SignInModelProps = {
+  signInService: ISignInService
+}
 
-export type LoginFormData = z.infer<typeof loginSchema>;
-
-const Login = () => {
+export const useSignInModel = ({ signInService }: SignInModelProps) => {
   const {
     register,
     handleSubmit,
@@ -26,7 +23,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const loginMutation = useMutation({
-    mutationFn: signIn,
+    mutationFn: signInService.exec,
     onSuccess: (data) => {
       if (data.token) {
         Cookies.set("token", data.token, {
@@ -37,9 +34,8 @@ const Login = () => {
       }
       navigate("/dashboard");
     },
-    onError: (error) => {
-      console.error("Erro no login:", error);
-      alert("Erro ao efetuar login. Tente novamente.");
+    onError: () => {
+      toast.error("Erro ao efetuar login. Tente novamente.");
     },
   });
 
@@ -47,11 +43,10 @@ const Login = () => {
     loginMutation.mutate(data);
   };
 
-  return (
-    <div>
-      <LoginForm register={register} errors={errors} onSubmit={handleSubmit(onSubmit)} />
-    </div>
-  );
-};
-
-export default Login;
+  return  {
+    onSubmit,
+    register,
+    handleSubmit,
+    errors
+  }
+}
