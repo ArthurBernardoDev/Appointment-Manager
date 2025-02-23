@@ -11,7 +11,7 @@ function SignInFormView(props: SignInFormViewProps) {
       <div className="signup-container">
         <h1 className="logo">Sorriso+</h1>
         <h2>Entre com sua conta</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} data-testid="sign-in-form">
           <label htmlFor="email">Seu e-mail</label>
           <input
             id="email"
@@ -19,7 +19,7 @@ function SignInFormView(props: SignInFormViewProps) {
             placeholder="Seu e-mail"
             {...register("email")}
           />
-          {errors.email && <p className="error">{errors.email.message}</p>}
+          {errors.email && <p className="error" data-testid="error-message">{errors.email.message}</p>}
 
           <label htmlFor="password">Sua senha</label>
           <input
@@ -29,7 +29,7 @@ function SignInFormView(props: SignInFormViewProps) {
             {...register("password")}
           />
           {errors.password && (
-            <p className="error">{errors.password.message}</p>
+            <p className="error" data-testid="error-message">{errors.password.message}</p>
           )}
 
           <button type="submit" data-testid="button-submit" className="create-button">
