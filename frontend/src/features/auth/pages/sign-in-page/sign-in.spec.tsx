@@ -4,8 +4,9 @@ import { useSignInModel } from './sign-in.model';
 import SignInFormView from './sign-in-form.view';
 import { ISignInService } from '../../../../services/SignInService';
 import { renderView } from '../../../../lib/renderView';
-import { fireEvent, waitFor } from '@testing-library/react';
+import { act, fireEvent, waitFor } from '@testing-library/react';
 import { toast } from 'sonner';
+import { renderHookWithProviders } from '../../../../lib/renderHooks';
 
 vi.mock("sonner", () => ({
   toast: {
@@ -75,5 +76,17 @@ describe("Sign in page", () => {
     await waitFor(() => {
       expect(toast.error).toHaveBeenCalledWith("Erro ao efetuar login. Tente novamente.");
     });
+  });
+
+  test("should call signInService.exec when form is submitted", async () => {
+    const mockExec = vi.fn(() => Promise.resolve({ token: "fake-token" }));
+    const signInService = { exec: mockExec };
+    const { result } = renderHookWithProviders(() => useSignInModel({ signInService }));
+  
+    await act(async () => {
+      result.current.onSubmit({ email: "user@example.com", password: "password123" });
+    });
+  
+    expect(mockExec).toHaveBeenCalledWith({ email: "user@example.com", password: "password123" });
   });
 });
