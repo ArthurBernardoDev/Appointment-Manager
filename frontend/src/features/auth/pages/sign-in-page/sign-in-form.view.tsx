@@ -16,19 +16,21 @@ function SignInFormView(props: SignInFormViewProps) {
           <input
             id="email"
             type="email"
+            data-testid="input-email"
             placeholder="Seu e-mail"
             {...register("email")}
           />
-          {errors.email && <p className="error" data-testid="error-message">{errors.email.message}</p>}
+          {errors && errors.email && <p className="error" data-testid="error-message">{errors.email.message}</p>}
 
           <label htmlFor="password">Sua senha</label>
           <input
             id="password"
             type="password"
+            data-testid="input-password"
             placeholder="Sua senha"
             {...register("password")}
           />
-          {errors.password && (
+          {errors && errors.password && (
             <p className="error" data-testid="error-message">{errors.password.message}</p>
           )}
 
